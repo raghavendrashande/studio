@@ -1,0 +1,19 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import HomeSection from '@/components/sections/HomeSection';
+import AboutSection from '@/components/sections/AboutSection';
+import ProjectsSection from '@/components/sections/ProjectsSection';
+import BlogSection from '@/components/sections/BlogSection';
+import ContactSection from '@/components/sections/ContactSection';
+---
+
+<MainLayout 
+  title="Cozy Coder Portfolio | Raghavendra Hande"
+  description="Raghavendra Hande's personal portfolio showcasing projects, blog, and skills."
+>
+  <HomeSection client:visible />
+  <AboutSection client:visible />
+  <ProjectsSection client:visible />
+  <BlogSection client:visible />
+  <ContactSection client:visible />
+</MainLayout>

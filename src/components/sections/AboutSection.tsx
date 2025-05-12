@@ -1,13 +1,12 @@
 import { UserIcon, CodeIcon, DatabaseIcon, ServerIcon, SmartphoneIcon, CpuIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import Image from 'next/image';
 
 const skills = {
-  frontend: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3'],
+  frontend: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'Jetpack Compose', 'Flutter'],
   backend: ['Node.js', 'Express.js', 'Python', 'Django', 'REST APIs', 'GraphQL'],
   database: ['PostgreSQL', 'MongoDB', 'MySQL', 'Firebase'],
   devops: ['Docker', 'Git', 'CI/CD', 'AWS'],
-  android: ['Kotlin', 'Android SDK', 'Jetpack Compose', 'Flutter (Dart)'],
+  android: ['Kotlin', 'Android SDK', 'Jetpack Compose'],
   systems: ['C++ (Modern C++17/20)', 'Qt Framework', 'Djinni']
 };
 
@@ -24,13 +23,14 @@ export default function AboutSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
           <div className="md:col-span-1 flex justify-center">
-            <Image
-              src="https://picsum.photos/seed/profile/400/400"
+            <img
+              src="https://picsum.photos/seed/profile/300/300" /* Adjusted size for potential direct use */
               alt="Raghavendra Hande"
               width={300}
               height={300}
               className="rounded-full shadow-lg object-cover border-4 border-primary"
               data-ai-hint="professional portrait"
+              loading="lazy"
             />
           </div>
           <div className="md:col-span-2">
@@ -53,8 +53,8 @@ export default function AboutSection() {
             <SkillCategory title="Backend" icon={<ServerIcon className="h-6 w-6 text-primary mb-2"/>} skills={skills.backend} />
             <SkillCategory title="Databases" icon={<DatabaseIcon className="h-6 w-6 text-primary mb-2"/>} skills={skills.database} />
             <SkillCategory title="Android Development" icon={<SmartphoneIcon className="h-6 w-6 text-primary mb-2"/>} skills={skills.android} />
-            <SkillCategory title="Systems & Cross-Platform" icon={<CpuIcon className="h-6 w-6 text-primary mb-2"/>} skills={skills.systems} />
-            <SkillCategory title="DevOps & Tools" icon={<CodeIcon className="h-6 w-6 text-primary mb-2"/>} skills={skills.devops} />
+            <SkillCategory title="Systems &amp; Cross-Platform" icon={<CpuIcon className="h-6 w-6 text-primary mb-2"/>} skills={skills.systems} />
+            <SkillCategory title="DevOps &amp; Tools" icon={<CodeIcon className="h-6 w-6 text-primary mb-2"/>} skills={skills.devops} />
           </div>
         </div>
       </div>

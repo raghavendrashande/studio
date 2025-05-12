@@ -1,8 +1,6 @@
 import { BookOpenIcon, CalendarDaysIcon, ArrowRightIcon } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
-import Link from 'next/link';
 import { blogPostsData, type BlogPost } from '@/lib/data';
 
 export default function BlogSection() {
@@ -24,9 +22,9 @@ export default function BlogSection() {
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" asChild>
             {/* This would link to a full blog page in a real app */}
-            <Link href="#"> 
+            <a href="/blog"> {/* Updated to a generic /blog link */}
               View All Posts <ArrowRightIcon className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </Button>
         </div>
       </div>
@@ -36,21 +34,20 @@ export default function BlogSection() {
 
 function BlogPostCard({ post }: { post: BlogPost }) {
   return (
-    <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+    <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 group">
       <div className="relative w-full h-48">
-        <Image
+        <img
           src={post.coverImageUrl}
           alt={post.title}
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
           data-ai-hint="abstract technology"
         />
       </div>
       <CardHeader>
         <CardTitle className="text-xl text-primary hover:underline">
           {/* This would link to the actual blog post page */}
-          <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+          <a href={`/blog/${post.slug}`}>{post.title}</a>
         </CardTitle>
       </CardHeader>
       <CardContent className="flex-grow">
@@ -62,9 +59,9 @@ function BlogPostCard({ post }: { post: BlogPost }) {
       </CardContent>
       <CardFooter>
         <Button variant="link" asChild className="p-0 h-auto text-primary">
-          <Link href={`/blog/${post.slug}`}>
+          <a href={`/blog/${post.slug}`}>
             Read More <ArrowRightIcon className="ml-1 h-4 w-4" />
-          </Link>
+          </a>
         </Button>
       </CardFooter>
     </Card>

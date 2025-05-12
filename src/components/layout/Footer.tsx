@@ -1,5 +1,4 @@
 
-import Link from 'next/link';
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 import { Code2Icon } from 'lucide-react'; // Using Code2Icon for LeetCode as a generic code icon
 
@@ -18,7 +17,7 @@ export default function Footer() {
         </p>
         <div className="flex space-x-4">
           {socialLinks.map((link) => (
-            <Link
+            <a
               key={link.name}
               href={link.href}
               target="_blank"
@@ -27,15 +26,15 @@ export default function Footer() {
               aria-label={link.name}
             >
               <link.icon className="h-5 w-5" />
-            </Link>
+            </a>
           ))}
-           <Link
+           <a
               href="mailto:raghavendra.hande@example.com"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
               <MailIcon className="h-5 w-5" />
-            </Link>
+            </a>
         </div>
       </div>
     </footer>

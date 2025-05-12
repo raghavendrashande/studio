@@ -2,8 +2,6 @@ import { BriefcaseIcon, ExternalLinkIcon, GithubIcon } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
-import Link from 'next/link';
 import { projectsData, type Project } from '@/lib/data';
 
 export default function ProjectsSection() {
@@ -34,12 +32,11 @@ function ProjectCard({ project }: { project: Project }) {
         <CardTitle className="text-xl text-primary">{project.title}</CardTitle>
       </CardHeader>
       <div className="relative w-full h-48">
-        <Image
+        <img
           src={project.imageUrl}
           alt={project.title}
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
           data-ai-hint="project code"
         />
       </div>
@@ -61,16 +58,16 @@ function ProjectCard({ project }: { project: Project }) {
       <CardFooter className="flex justify-start space-x-3">
         {project.githubUrl && (
           <Button variant="outline" size="sm" asChild>
-            <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
               <GithubIcon className="mr-2 h-4 w-4" /> GitHub
-            </Link>
+            </a>
           </Button>
         )}
         {project.liveUrl && (
           <Button variant="default" size="sm" asChild>
-            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
               <ExternalLinkIcon className="mr-2 h-4 w-4" /> Live Demo
-            </Link>
+            </a>
           </Button>
         )}
       </CardFooter>

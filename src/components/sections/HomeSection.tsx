@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
 import { ArrowDownIcon } from 'lucide-react';
-import Link from 'next/link';
 
 export default function HomeSection() {
   return (
@@ -19,13 +18,13 @@ export default function HomeSection() {
         </p>
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
           <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105">
-            <Link href="#projects">
+            <a href="#projects">
               View My Work
               <ArrowDownIcon className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
           </Button>
           <Button asChild variant="outline" size="lg" className="transition-transform duration-300 hover:scale-105">
-            <Link href="#contact">Get in Touch</Link>
+            <a href="#contact">Get in Touch</a>
           </Button>
         </div>
       </div>
