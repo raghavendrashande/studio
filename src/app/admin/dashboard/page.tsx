@@ -1,15 +1,16 @@
+
 'use client';
 
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { LogOutIcon, Edit3Icon, LayoutDashboardIcon, FileTextIcon, BriefcaseIcon } from 'lucide-react';
+import { LogOutIcon, Edit3Icon, LayoutDashboardIcon, FileTextIcon, BriefcaseIcon, FilePenLineIcon } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function AdminDashboardPage() {
   const router = useRouter();
   const { toast } = useToast();
-  const adminName = "Raghsh"; // Placeholder
+  const adminName = "Raghavendra Hande"; 
 
   const handleLogout = () => {
     localStorage.removeItem('isAdminAuthenticated');
@@ -20,10 +21,10 @@ export default function AdminDashboardPage() {
     router.replace('/admin/login');
   };
 
-  // Placeholder functions for navigating to content editing pages
-  const navigateToEdit = (section: string) => {
-    toast({ title: 'Navigation', description: `Placeholder: Would navigate to edit ${section}.` });
-    // Example: router.push(`/admin/edit/${section.toLowerCase()}`);
+  // Placeholder functions for navigating to content editing pages that are not yet implemented
+  const navigateToPlaceholderEdit = (section: string) => {
+    toast({ title: 'Navigation', description: `Placeholder: Edit page for ${section} is not yet implemented.` });
+    // Example: router.push(`/admin/edit/${section.toLowerCase().replace(' ', '-')}`);
   };
 
   return (
@@ -54,25 +55,31 @@ export default function AdminDashboardPage() {
               title="Homepage"
               description="Edit hero section, tagline, and featured content."
               icon={<LayoutDashboardIcon className="h-8 w-8 text-primary" />}
-              onEdit={() => navigateToEdit('Homepage')}
+              onEdit={() => navigateToPlaceholderEdit('Homepage')}
             />
             <ContentEditCard
               title="About Section"
               description="Update your biography, skills, and experience."
               icon={<FileTextIcon className="h-8 w-8 text-primary" />}
-              onEdit={() => navigateToEdit('About Section')}
+              onEdit={() => navigateToPlaceholderEdit('About Section')}
             />
             <ContentEditCard
               title="Projects"
               description="Add, remove, or modify project details and showcases."
               icon={<BriefcaseIcon className="h-8 w-8 text-primary" />}
-              onEdit={() => navigateToEdit('Projects')}
+              onEdit={() => router.push('/admin/edit/projects')}
             />
-            {/* Add more cards for Blog, Contact, etc. as needed */}
+            <ContentEditCard
+              title="Blog Posts"
+              description="Create, edit, or delete blog articles."
+              icon={<FilePenLineIcon className="h-8 w-8 text-primary" />}
+              onEdit={() => router.push('/admin/edit/blog')}
+            />
+            {/* Add more cards for Contact, etc. as needed */}
           </CardContent>
           <CardFooter className="mt-6 pt-6 border-t border-border">
             <p className="text-sm text-muted-foreground">
-              Future enhancements will include more granular content controls and analytics.
+              More content management features will be added soon.
             </p>
           </CardFooter>
         </Card>

@@ -1,3 +1,4 @@
+
 // This is a placeholder for individual blog post pages.
 // In a real application, you would fetch and display the blog post content based on the slug.
 
@@ -49,22 +50,22 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </header>
 
         <div className="space-y-6">
-          <p>{post.excerpt}</p>
+          <p className="text-xl font-medium text-foreground">{post.excerpt}</p>
+          <hr className="my-6 border-border"/>
           <p>
-            This is placeholder content for the blog post titled &quot;{post.title}&quot;. 
-            In a real application, this section would be populated with the full content of the blog post, 
-            likely fetched from a CMS or markdown files.
+            The full content for the blog post titled &quot;{post.title}&quot; would appear here.
+            This content can be managed through the admin panel.
+            For now, this is a placeholder demonstrating the structure of a blog post page.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Imagine detailed paragraphs here, perhaps with code snippets, images, or embedded videos,
+            all contributing to a comprehensive discussion of the topic. The possibilities are endless
+            and can be tailored to best convey the message of the post.
           </p>
-          <h2 className="text-2xl font-semibold">Subheading Example</h2>
+          <h2 className="text-2xl font-semibold mt-8">Example Subheading</h2>
           <p>
-            Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
-            Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta.
+            Further sections, rich media, and detailed discussions related to the topic would typically follow.
+            This section would elaborate on a specific aspect of &quot;{post.title}&quot;, providing more depth and insights.
           </p>
         </div>
       </article>

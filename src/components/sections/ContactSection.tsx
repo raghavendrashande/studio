@@ -1,12 +1,13 @@
+
 import { SendIcon, GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 import { Code2Icon } from 'lucide-react'; // Using Code2Icon for LeetCode
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/yourusername', icon: GithubIcon, user: 'yourusername' },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: LinkedinIcon, user: 'yourusername' },
-  { name: 'LeetCode', href: 'https://leetcode.com/yourusername', icon: Code2Icon, user: 'yourusername' },
+  { name: 'GitHub', href: 'https://github.com/raghsh', icon: GithubIcon, user: 'raghsh' },
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/raghsh', icon: LinkedinIcon, user: 'raghsh' },
+  { name: 'LeetCode', href: 'https://leetcode.com/raghsh', icon: Code2Icon, user: 'raghsh' },
 ];
 
 export default function ContactSection() {
@@ -39,7 +40,7 @@ export default function ContactSection() {
         </div>
         
         <Button size="lg" asChild className="py-7 px-8 text-lg transition-transform duration-300 hover:scale-105">
-          <Link href="mailto:your.email@example.com">
+          <Link href="mailto:raghavendra.hande@example.com">
             <MailIcon className="mr-3 h-6 w-6" /> Send an Email
           </Link>
         </Button>

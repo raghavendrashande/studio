@@ -1,3 +1,4 @@
+
 export type Project = {
   id: string;
   title: string;
@@ -9,7 +10,7 @@ export type Project = {
 };
 
 export type BlogPost = {
-  id: string;
+  id:string;
   title: string;
   coverImageUrl: string;
   createdAt: string;
@@ -24,8 +25,8 @@ export const projectsData: Project[] = [
     description: 'A full-featured e-commerce platform with a custom CMS and payment gateway integration.',
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe', 'PostgreSQL'],
     imageUrl: 'https://picsum.photos/seed/project1/600/400',
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/raghsh/ecommerce-nextjs-example',
+    liveUrl: 'https://ecommerce.raghshandedomain.com',
   },
   {
     id: '2',
@@ -33,7 +34,7 @@ export const projectsData: Project[] = [
     description: 'A collaborative task management tool with real-time updates and a clean, intuitive interface.',
     techStack: ['React', 'Firebase', 'Material UI', 'Node.js'],
     imageUrl: 'https://picsum.photos/seed/project2/600/400',
-    githubUrl: 'https://github.com',
+    githubUrl: 'https://github.com/raghsh/task-manager-react-example',
   },
   {
     id: '3',
@@ -41,7 +42,7 @@ export const projectsData: Project[] = [
     description: 'My previous personal portfolio website, built with vanilla HTML, CSS, and JavaScript.',
     techStack: ['HTML', 'CSS', 'JavaScript'],
     imageUrl: 'https://picsum.photos/seed/project3/600/400',
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://portfolio-v1.raghshandedomain.com',
   },
 ];
 

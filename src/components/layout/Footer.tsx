@@ -1,11 +1,12 @@
+
 import Link from 'next/link';
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 import { Code2Icon } from 'lucide-react'; // Using Code2Icon for LeetCode as a generic code icon
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/yourusername', icon: GithubIcon },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: LinkedinIcon },
-  { name: 'LeetCode', href: 'https://leetcode.com/yourusername', icon: Code2Icon },
+  { name: 'GitHub', href: 'https://github.com/raghsh', icon: GithubIcon },
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/raghsh', icon: LinkedinIcon },
+  { name: 'LeetCode', href: 'https://leetcode.com/raghsh', icon: Code2Icon },
 ];
 
 export default function Footer() {
@@ -29,7 +30,7 @@ export default function Footer() {
             </Link>
           ))}
            <Link
-              href="mailto:your.email@example.com"
+              href="mailto:raghavendra.hande@example.com"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
